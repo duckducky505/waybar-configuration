@@ -1,0 +1,75 @@
+* {
+    font-family: "JetBrainsMono NF";
+    font-size: 13px;
+    border: none;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.9); 
+}
+
+.modules-left {
+    background-color: #313244; 
+    margin: 4px 10px;          
+    padding: 0 10px;           
+    border-radius: 12px;       
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#pulseaudio {
+    background-color: #45475a;
+    margin: 2px 0;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#pulseaudio.muted {
+    background-color: #45475a;
+}
+
+#mpris {
+    background-color: transparent;
+    padding: 0 10px;
+}
+
+.modules-center {
+    background-color: #313244; 
+    margin: 4px 10px;          
+    padding: 0 10px;           
+    border-radius: 12px;       
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#workspaces {
+    background-color: #45475a;
+    margin: 2px 0;
+    border-radius: 10px;
+}
+
+#workspaces button {
+    color: #cdd6f4;
+    padding: 0 5px;
+}
+
+#workspaces button.active {
+    color: #fab387;
+}
+
+#clock {
+    background-color: transparent;
+    padding: 0 10px;
+}
+
+.modules-right {
+    background-color: #313244; 
+    margin: 4px 10px;          
+    padding: 0 10px;           
+    border-radius: 12px;       
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#network, #backlight, #cpu, #battery, #custom-notification {
+    background-color: transparent; 
+    padding: 0 8px;
+    margin: 0;
+}

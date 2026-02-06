@@ -1,0 +1,110 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 8,
+
+    "modules-left": [
+        "pulseaudio",
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "backlight",
+        "cpu",
+        "battery",
+        "custom/notification"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "default": "󰄰", 
+            "active": "󰮯",
+            "urgent": "󰀦"
+        }
+    },
+
+    "pulseaudio":{
+        "format" : "{icon} {volume}%",
+        "format-muted":"",
+        "format-icons":{
+            "default":"",
+            "headphones":"󰋋"
+        },
+        "scroll-step": 1,
+	    "on-click": "pavucontrol"
+    },
+
+    "mpris":{
+        "format" : "{player_icon} {dynamic}",
+        "dynamic-order":["title", "artist", "album"],
+        "format-paused" : "{status_icon} <i>{dynamic}</i>",
+        "player-icons":{
+            "default" : "",
+            "mpv":""
+        },
+        "status-icons":{
+            "paused":""
+        }
+    },
+    
+    "clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%Y-%m-%d}"
+    },
+
+    "network":{
+        "interface": "wlan0",
+        "format":"{ifname}",
+        "format-wifi":"  {essid}({signalStrength}%)",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "Connected to {essid}",
+        "tooltip-format-disconnected": "Disconnected",
+	    "max-length": 50
+    },
+
+    "backlight":{
+        "device":"inter_backlight",
+        "format":"{icon} {percent}%",
+        "format-icons":["", ""],
+        "tooltip":true,
+        "tooltip-format":"Screen Brightness:{percent}%"
+    },
+
+    "cpu":{
+        "interval":1,
+        "format":" {usage}%"
+    },
+
+    "battery":{
+        "interval": 60,
+        "states":{
+            "warning":30,
+            "critical":10
+        },
+        "events":{
+                "on-discharging-warning":"notify-send -u normal 'Low Battery Warning'",
+                "on-discharging-critical":"notify-send -u critical 'Battery is very low. Plug in the changer ASAP.'",
+                "on-charging-100":"notify-send -u normal'Battery is full. You can unplug the charger now'"
+        },
+        "format":"{icon} {capacity}%",
+        "format-icons":["", "", "", "", ""]
+        // "tooltip-format":"Battery Health is {health}"
+    },
+
+    "custom/notification":{
+
+    }
+}
