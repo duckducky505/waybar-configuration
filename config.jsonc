@@ -16,12 +16,23 @@
         "clock"
     ],
     "modules-right": [
+        "tray",
         "network",
         "backlight",
         "cpu",
         "battery",
         "custom/notification"
     ],
+
+    "tray":{
+        "icon-size":21,
+        "spacing":10,
+        "show-passive-items": true,
+        "icons": {
+            "blueman": "bluetooth",
+            "nm-applet": "network-wireless"
+        }
+    },    
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -38,7 +49,7 @@
         "format-muted":"",
         "format-icons":{
             "default":"",
-            "headphones":"󰋋"
+            "headphone":"󰋋"
         },
         "scroll-step": 1,
 	    "on-click": "pavucontrol"
@@ -72,7 +83,8 @@
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "Connected to {essid}",
         "tooltip-format-disconnected": "Disconnected",
-	    "max-length": 50
+	    "max-length": 50,
+        "on-click":"kitty --class dotfiles-floating -e nmtui"
     },
 
     "backlight":{

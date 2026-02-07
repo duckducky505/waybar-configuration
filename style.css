@@ -55,9 +55,16 @@ window#waybar {
     color: #fab387;
 }
 
-#clock {
+#clock{
     background-color: transparent;
     padding: 0 10px;
+}
+
+#tray {
+    background-color: #45475a; 
+    margin: 2px 4px;
+    padding: 0 10px;
+    border-radius: 10px;
 }
 
 .modules-right {
@@ -68,8 +75,38 @@ window#waybar {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#network, #backlight, #cpu, #battery, #custom-notification {
+#network, #backlight, #cpu, #custom-notification {
     background-color: transparent; 
     padding: 0 8px;
     margin: 0;
+}
+
+#battery {
+    background-color: transparent; 
+    padding: 0 8px;
+    margin: 0;
+    color: #cdd6f4; 
+}
+
+#battery.charging {
+    color: #a6e3a1; 
+    border-bottom: 2px solid #a6e3a1; 
+} 
+
+#battery.critical:not(.charging) {
+    background-color: #f38ba8; 
+    color: #1e1e2e;
+    border-radius: 8px;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #313244;
+        color: #f38ba8;
+    }
 }
