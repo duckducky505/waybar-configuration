@@ -57,8 +57,9 @@
 
     "mpris":{
         "format" : "{player_icon} {dynamic}",
-        "dynamic-order":["title", "artist", "album"],
-        "format-paused" : "{status_icon} <i>{dynamic}</i>",
+        "dynamic-order":["title"],
+        "format-paused" : "{status_icon}<i>{dynamic}</i>",
+        "tooltip":false,
         "player-icons":{
             "default" : "",
             "mpv":""
@@ -70,9 +71,9 @@
     
     "clock": {
         "interval": 60,
-        "tooltip": true,
-        "format": "{:%I:%M %p}",
-        "tooltip-format": "{:%Y-%m-%d}"
+        "tooltip": false,
+        "format": " {:%H:%M %p}",
+	    "format-alt": "{:%A, %B %d, %Y (%R)} "
     },
 
     "network":{
@@ -117,6 +118,8 @@
     },
 
     "custom/notification":{
-
+        "format":"{icon}",
+        "format-icons":[""],
+        "on-click": "swaync-client -t -sw"
     }
 }
